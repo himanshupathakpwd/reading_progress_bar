@@ -75,10 +75,10 @@ function reading_progress_bar_page_alter(&$page) {
     '#markup' => '<progress class="' . $progress_class . '" value="0"></progress>',
     '#attached' => array(
       'js' => array(
-        drupal_get_path('module', 'reading_progress_bar') . '/includes/js/reading_progress_bar.js' => $js_settings,
+        drupal_get_path('module', 'reading_progress_bar') . '/js/reading_progress_bar.js' => $js_settings,
       ),
       'css' => array(
-        drupal_get_path('module', 'reading_progress_bar') . '/includes/css/reading_progress_bar.css' => $css_settings,
+        drupal_get_path('module', 'reading_progress_bar') . '/css/reading_progress_bar.css' => $css_settings,
         "
         progress.$progress_class{color: $top_bar_color; height: $top_bar_height;  background-color: $top_bar_background_color; border: $top_bar_border;}
         progress.$progress_class::-webkit-progress-value {background-color: $top_bar_color;}
