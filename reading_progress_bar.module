@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Module file for reading progress
+ * Module file for reading progress.
  */
 define('READING_PROGRESS_BAR_HEIGHT', '5px');
 define('READING_PROGRESS_BAR_COLOR', '#FF0000');
@@ -13,13 +13,17 @@ define('READING_PROGRESS_BAR_BORDER', 'none');
  * Implements hook_help().
  */
 function reading_progress_bar_help($path, $arg) {
-  switch($path) {
+  $output = '';
+  switch ($path) {
     case 'admin/help#reading_progress_bar':
-      return '<p>'. t('When scrolling down the page, you can track your reading progress on a top bar. This is also configurable according to user\'s need. Don\'t add semicolons (;) after the css configuration strings.
-      As this will be hidden behind toolbar or admin_menu if enabled in admin interface, check it as anonymous user.') . '</p>';
+      $output = '<p>' . t("When scrolling down the page, you can track your reading progress on a top bar.") . '</p>';
+      $output .= '<p>' . t("This is also configurable according to user's need. Don't add semicolons (;) after the css configuration strings.") . '</p>';
+      $output .= '<p>' . t("As this will be hidden behind toolbar or admin_menu if enabled in admin interface, check it as anonymous user.") . '</p>';
       break;
   }
+  return $output;
 }
+
 /**
  * Implements hook_menu().
  */

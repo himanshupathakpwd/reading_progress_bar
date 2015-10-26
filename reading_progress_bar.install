@@ -9,10 +9,10 @@
  * Implements hook_uninstall().
  */
 function reading_progress_bar_uninstall() {
-  // Delete all variables which are named like reading_progress_bar_%
+  // Delete all variables which are named like reading_progress_bar_%.
   db_delete('variable')
     ->condition('name', 'reading_progress_bar_%', 'LIKE')
     ->execute();
-  // Clear variables cache
+  // Clear variables cache.
   cache_clear_all('variables', 'cache_bootstrap');
 }

@@ -1,10 +1,11 @@
 (function ($) {
   Drupal.behaviors.reading_progress_bar = {
     attach: function (context, settings) {
-      var winHeight = $(window).height(),
-        docHeight = $(document).height(),
-        progressBar = $('progress'),
-        max, value;
+      var winHeight = $(window).height();
+      var docHeight = $(document).height();
+      var progressBar = $('progress');
+      var max;
+      var value;
       /* Set the max scrollable area */
       max = docHeight - winHeight;
       progressBar.attr('max', max);
@@ -14,5 +15,5 @@
         progressBar.attr('value', value);
       });
     }
-  }
+  };
 })(jQuery);
