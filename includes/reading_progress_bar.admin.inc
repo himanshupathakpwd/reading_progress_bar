@@ -5,6 +5,9 @@
  * Administrative functions for reading progress bar module.
  */
 
+/**
+ * Admin config form for reading progress bar.
+ */
 function _reading_progress_bar_configuration($form, &$form_state) {
   $form['reading_progress_bar_top_bar'] = array(
     '#type' => 'fieldset',

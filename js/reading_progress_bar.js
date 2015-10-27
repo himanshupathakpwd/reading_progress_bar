@@ -1,3 +1,8 @@
+/**
+ * @file
+ * JS handler for reading progres bar.
+ */
+
 (function ($) {
   Drupal.behaviors.reading_progress_bar = {
     attach: function (context, settings) {
@@ -10,7 +15,6 @@
       /* Set the max scrollable area */
       max = docHeight - winHeight;
       progressBar.attr('max', max);
-      
       $(document).on('scroll', function () {
         value = $(window).scrollTop();
         progressBar.attr('value', value);

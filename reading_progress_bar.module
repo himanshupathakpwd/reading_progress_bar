@@ -4,6 +4,7 @@
  * @file
  * Module file for reading progress.
  */
+
 define('READING_PROGRESS_BAR_HEIGHT', '5px');
 define('READING_PROGRESS_BAR_COLOR', '#FF0000');
 define('READING_PROGRESS_BAR_BACKGROUND_COLOR', 'transparent');
@@ -82,15 +83,11 @@ function reading_progress_bar_page_alter(&$page) {
         drupal_get_path('module', 'reading_progress_bar') . '/js/reading_progress_bar.js' => $js_settings,
       ),
       'css' => array(
-        drupal_get_path('module', 'reading_progress_bar') . '/css/reading_progress_bar.css' => $css_settings,
-        "
-        progress.$progress_class{color: $top_bar_color; height: $top_bar_height;  background-color: $top_bar_background_color; border: $top_bar_border;}
-        progress.$progress_class::-webkit-progress-value {background-color: $top_bar_color;}
-        progress.$progress_class::-moz-progress-bar {background-color: $top_bar_color;}
-        progress.$progress_class::-webkit-progress-bar {background-color: $top_bar_background_color;}
-        " => array(
-            'type' => 'inline',
-          ) + $css_settings,
+        drupal_get_path('module', 'reading_progress_bar') . '/css/reading_progress_bar.css' =>
+        $css_settings,
+        "progress.$progress_class{color: $top_bar_color; height: $top_bar_height;  background-color: $top_bar_background_color; border: $top_bar_border;} progress.$progress_class::-webkit-progress-value {background-color: $top_bar_color;} progress.$progress_class::-moz-progress-bar {background-color: $top_bar_color;} progress.$progress_class::-webkit-progress-bar {background-color: $top_bar_background_color;}" => array(
+          'type' => 'inline',
+        ) + $css_settings,
       ),
     ),
   );
