@@ -5,7 +5,8 @@ where user can track the progress on top bar as how much content has been read.
 
 Usage:
 1. Download and extract to the module folder.
-2. Navigate to path 'admin/modules' and enable the module.
+2. Navigate to path 'admin/modules' and enable the module and it's dependency as
+jquery_update. Also make sure we are using jquery version >= 1.7.
 3. Make sure to 'clear the cache'.
 4. Check with anonymous user where admin_menu or toolbar is not visible.
    Otherwise the reading bar will remain hidden behind toolbar.

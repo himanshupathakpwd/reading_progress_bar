@@ -3,3 +3,4 @@ description = This module provides a reading bar on top of the page which shows 
 core = 7.x
 configure = admin/config/user-interface/reading-progress-bar
 package = User interface
+dependencies[] = jquery_update
