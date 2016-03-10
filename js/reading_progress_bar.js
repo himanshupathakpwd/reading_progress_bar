@@ -4,6 +4,7 @@
  */
 
 (function ($) {
+  "use strict";
   Drupal.behaviors.reading_progress_bar = {
     attach: function (context, settings) {
       var winHeight = $(window).height();
