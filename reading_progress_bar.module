@@ -6,8 +6,8 @@
  */
 
 define('READING_PROGRESS_BAR_HEIGHT', '5px');
-define('READING_PROGRESS_BAR_COLOR', '#FF0000');
-define('READING_PROGRESS_BAR_BACKGROUND_COLOR', 'transparent');
+define('READING_PROGRESS_BAR_COLOR', 'FF0000');
+define('READING_PROGRESS_BAR_BACKGROUND_COLOR', 'FFFFFF');
 define('READING_PROGRESS_BAR_BORDER', 'none');
 
 /**
@@ -64,8 +64,8 @@ function reading_progress_bar_permission() {
 function reading_progress_bar_page_alter(&$page) {
   $top_bar_values = variable_get('reading_progress_bar_top_bar', array());
   $top_bar_height = isset($top_bar_values['height']) ? $top_bar_values['height'] : READING_PROGRESS_BAR_HEIGHT;
-  $top_bar_color = isset($top_bar_values['color']) ? $top_bar_values['color'] : READING_PROGRESS_BAR_COLOR;
-  $top_bar_background_color = isset($top_bar_values['background_color']) ? $top_bar_values['background_color'] : READING_PROGRESS_BAR_BACKGROUND_COLOR;
+  $top_bar_color = isset($top_bar_values['color']) ? '#' . $top_bar_values['color'] : '#' . READING_PROGRESS_BAR_COLOR;
+  $top_bar_background_color = isset($top_bar_values['background_color']) ? '#' . $top_bar_values['background_color'] : '#' . READING_PROGRESS_BAR_BACKGROUND_COLOR;
   $top_bar_border = isset($top_bar_values['border']) ? $top_bar_values['border'] : READING_PROGRESS_BAR_BORDER;
   $js_settings = array(
     'scope' => 'footer',

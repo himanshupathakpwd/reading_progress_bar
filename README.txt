@@ -11,5 +11,9 @@ jquery_update. Also make sure we are using jquery version >= 1.7.
 4. Check with anonymous user where admin_menu or toolbar is not visible.
    Otherwise the reading bar will remain hidden behind toolbar.
 
+Extension:
+1. You can download jQuery Colorpicker from this URL to have nice colorpicker:
+   (https://www.drupal.org/project/jquery_colorpicker).
+
 Future Scopes:
 1. Making it configurable per block.

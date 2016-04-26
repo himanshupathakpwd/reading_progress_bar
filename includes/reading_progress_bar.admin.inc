@@ -23,18 +23,34 @@ function _reading_progress_bar_configuration($form, &$form_state) {
     '#description' => t('You can enter css height for the reading bar.'),
     '#default_value' => isset($top_bar_values['height']) ? filter_xss($top_bar_values['height']) : READING_PROGRESS_BAR_HEIGHT,
   );
-  $form['reading_progress_bar_top_bar']['color'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Color'),
-    '#description' => t('You can enter css color for the reading bar.'),
-    '#default_value' => isset($top_bar_values['color']) ? filter_xss($top_bar_values['color']) : READING_PROGRESS_BAR_COLOR,
-  );
-  $form['reading_progress_bar_top_bar']['background_color'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Background Color'),
-    '#description' => t('You can enter css background color for the reading bar.'),
-    '#default_value' => isset($top_bar_values['background_color']) ? filter_xss($top_bar_values['background_color']) : READING_PROGRESS_BAR_BACKGROUND_COLOR,
-  );
+  if (module_exists('jquery_colorpicker')) {
+    $form['reading_progress_bar_top_bar']['color'] = array(
+      '#type' => 'jquery_colorpicker',
+      '#title' => t('Color'),
+      '#description' => t('Choose color for bar.'),
+      '#default_value' => isset($top_bar_values['color']) ? filter_xss($top_bar_values['color']) : READING_PROGRESS_BAR_COLOR,
+    );
+    $form['reading_progress_bar_top_bar']['background_color'] = array(
+      '#type' => 'jquery_colorpicker',
+      '#title' => t('Background Color'),
+      '#description' => t('Choose background color.'),
+      '#default_value' => isset($top_bar_values['background_color']) ? filter_xss($top_bar_values['background_color']) : READING_PROGRESS_BAR_BACKGROUND_COLOR,
+    );
+  }
+  else {
+    $form['reading_progress_bar_top_bar']['color'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Color'),
+      '#description' => t('You can enter css color for the reading bar.'),
+      '#default_value' => isset($top_bar_values['color']) ? filter_xss($top_bar_values['color']) : READING_PROGRESS_BAR_COLOR,
+    );
+    $form['reading_progress_bar_top_bar']['background_color'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Background Color'),
+      '#description' => t('You can enter css background color for the reading bar.'),
+      '#default_value' => isset($top_bar_values['background_color']) ? filter_xss($top_bar_values['background_color']) : READING_PROGRESS_BAR_BACKGROUND_COLOR,
+    );
+  }
   $form['reading_progress_bar_top_bar']['border'] = array(
     '#type' => 'textfield',
     '#title' => t('Border'),
