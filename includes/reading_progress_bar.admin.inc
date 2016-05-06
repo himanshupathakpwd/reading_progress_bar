@@ -51,6 +51,17 @@ function _reading_progress_bar_configuration($form, &$form_state) {
       '#default_value' => isset($top_bar_values['background_color']) ? filter_xss($top_bar_values['background_color']) : READING_PROGRESS_BAR_BACKGROUND_COLOR,
     );
   }
+  $form['reading_progress_bar_top_bar']['background_transparent'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Transparent Background'),
+    '#description' => t('Choose this option to make background transparent instead of a background color.'),
+    '#default_value' => isset($top_bar_values['background_transparent']) ? filter_xss($top_bar_values['background_transparent']) : 1,
+  );
+  $form['reading_progress_bar_top_bar']['background_color']['#states'] = array(
+    'invisible' => array(
+      ':input[name="reading_progress_bar_top_bar[background_transparent]"]' => array('checked' => TRUE),
+    ),
+  );
   $form['reading_progress_bar_top_bar']['border'] = array(
     '#type' => 'textfield',
     '#title' => t('Border'),

@@ -67,6 +67,10 @@ function reading_progress_bar_page_alter(&$page) {
   $top_bar_color = isset($top_bar_values['color']) ? '#' . $top_bar_values['color'] : '#' . READING_PROGRESS_BAR_COLOR;
   $top_bar_background_color = isset($top_bar_values['background_color']) ? '#' . $top_bar_values['background_color'] : '#' . READING_PROGRESS_BAR_BACKGROUND_COLOR;
   $top_bar_border = isset($top_bar_values['border']) ? $top_bar_values['border'] : READING_PROGRESS_BAR_BORDER;
+  $top_bar_background_transparent = isset($top_bar_values['background_transparent']) ? $top_bar_values['background_transparent'] : 1;
+  if (!empty($top_bar_background_transparent)) {
+    $top_bar_background_color = 'transparent';
+  }
   $js_settings = array(
     'scope' => 'footer',
     'every_page' => TRUE,
